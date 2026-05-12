@@ -51,9 +51,9 @@ body {
   transition: var(--transition);
 }
 
-body.dark-mode .logo-proper {
-  /* No filter needed as we use a dedicated dark logo */
-}
+/* body.dark-mode .logo-proper {
+  No filter needed as we use a dedicated dark logo
+} */
 
 h1, h2, h3, h4 {
   font-weight: 700;
@@ -95,6 +95,7 @@ button {
 
 .gradient-text {
   background: linear-gradient(135deg, #f9d423, #ff4e50);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
