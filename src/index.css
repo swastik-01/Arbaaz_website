@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Default Light Mode */
+  --primary: #c2b280;
+  --secondary: #1a1a1a;
+  --accent: #c2b280;
+  --background: #ffffff;
+  --surface: #f9f9f9;
+  --text: #1a1a1a;
+  --text-muted: #666666;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode {
+  --primary: #c2b280;
+  --secondary: #ffffff;
+  --accent: #c2b280;
+  --background: #0a0b10;
+  --surface: #12141d;
+  --text: #ffffff;
+  --text-muted: #b0b3c1;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+.logo-proper {
+  height: 60px;
+  width: auto;
+  transition: var(--transition);
+}
+
+body.dark-mode .logo-proper {
+  /* No filter needed as we use a dedicated dark logo */
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* Removed crossfade animation */
+}
+
+.slide:not(:first-child) {
+  display: none;
+}
+
+.hero-bg-zoom {
+  /* Keep the zoom but remove the single animation if needed, 
+     or combine it into the slide class */
+  transform-origin: center;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #1a1a1a; /* Dark text on gold always looks better */
+  padding: 1.2rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+  background: #b2a270;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: var(--glass);
+}
