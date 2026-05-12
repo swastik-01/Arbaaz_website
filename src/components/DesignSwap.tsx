@@ -33,23 +33,34 @@ const DesignSwap = () => {
     <section id="transformation" className="section" style={{ background: 'var(--background)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '3.5rem', color: 'var(--text)' }}>
+          <h2 style={{ 
+            fontFamily: 'var(--font-serif)', 
+            fontSize: 'clamp(2rem, 8vw, 3.5rem)', 
+            color: 'var(--text)' 
+          }}>
             The <span style={{ color: 'var(--primary)' }}>Transformation</span>
           </h2>
-          <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>Click to explore how IntraSpace brings design intent through execution with real project clarity.</p>
+          <p style={{ color: 'var(--text-muted)', marginTop: '1rem', fontSize: '0.9rem' }}>Click to explore how IntraSpace brings design intent through execution with real project clarity.</p>
           
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '0.5rem', 
+            marginTop: '2rem',
+            flexWrap: 'wrap'
+          }}>
             {sets.map((set, i) => (
               <button 
                 key={i}
                 onClick={() => setActiveSet(i)}
                 style={{
-                  padding: '0.8rem 1.5rem',
+                  padding: '0.6rem 1.2rem',
                   borderRadius: '30px',
                   border: activeSet === i ? '2px solid var(--primary)' : '1px solid var(--glass-border)',
                   background: activeSet === i ? 'var(--primary)' : 'transparent',
-                  color: activeSet === i ? '#fff' : 'var(--text)',
+                  color: activeSet === i ? '#1a1a1a' : 'var(--text)',
                   fontWeight: 700,
+                  fontSize: '0.8rem',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
@@ -64,7 +75,7 @@ const DesignSwap = () => {
           style={{ 
             position: 'relative', 
             width: '100%', 
-            height: '650px', 
+            height: 'clamp(300px, 60vh, 650px)', 
             borderRadius: '24px', 
             overflow: 'hidden',
             cursor: 'ew-resize',

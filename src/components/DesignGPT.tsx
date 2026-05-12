@@ -26,7 +26,12 @@ const DesignGPT = () => {
       <div style={{ position: 'absolute', bottom: '10%', right: '-5%', width: '30%', height: '30%', background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
       <div className="container" style={{ maxWidth: '1400px', position: 'relative', zIndex: 1 }}>
-        <div className="section-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+        <div className="section-grid" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(300px, 100%, 600px), 1fr))', 
+          gap: 'clamp(3rem, 10vw, 6rem)', 
+          alignItems: 'center' 
+        }}>
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -36,25 +41,38 @@ const DesignGPT = () => {
               display: 'inline-flex', 
               alignItems: 'center', 
               gap: '0.8rem', 
-              padding: '0.8rem 1.5rem', 
+              padding: '0.6rem 1.2rem', 
               background: 'rgba(194, 178, 128, 0.15)', 
               borderRadius: '100px', 
               color: 'var(--primary)',
               fontWeight: 900,
-              fontSize: '0.75rem',
-              marginBottom: '2.5rem',
-              letterSpacing: '3px',
+              fontSize: '0.7rem',
+              marginBottom: '2rem',
+              letterSpacing: '2px',
               border: '1px solid rgba(194, 178, 128, 0.2)'
             }}>
-              <Sparkles size={16} /> FLOOR PLAN VISUALIZER
+              <Sparkles size={14} /> FLOOR PLAN VISUALIZER
             </div>
             
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '5rem', marginBottom: '2.5rem', color: 'var(--text)', lineHeight: 1.1, fontWeight: 900 }}>
+            <h2 style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(2.5rem, 10vw, 5rem)', 
+              marginBottom: '2rem', 
+              color: 'var(--text)', 
+              lineHeight: 1.1, 
+              fontWeight: 900 
+            }}>
               Upload Your <br />
               <span style={{ color: 'var(--primary)' }}>Floor Plan.</span>
             </h2>
             
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px' }}>
+            <p style={{ 
+              color: 'var(--text-muted)', 
+              fontSize: 'clamp(1rem, 3vw, 1.25rem)', 
+              lineHeight: 1.6, 
+              marginBottom: '2.5rem', 
+              maxWidth: '600px' 
+            }}>
               Share your layout and get a premium visualization flow with project-ready insights, site planning, and budget intelligence.
             </p>
 

@@ -171,3 +171,55 @@ button {
 .btn-outline:hover {
   background: var(--glass);
 }
+
+/* Responsive Utilities */
+@media (max-width: 1024px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  h3 { font-size: 1.5rem !important; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem !important; }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: block !important;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+}

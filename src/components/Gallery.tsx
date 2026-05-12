@@ -16,12 +16,17 @@ const Gallery = () => {
   return (
     <section id="gallery" className="section" style={{ background: 'var(--background)', padding: '8rem 0' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(3rem, 10vw, 5rem)' }}>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ fontFamily: 'var(--font-serif)', fontSize: '4rem', color: 'var(--text)', marginBottom: '1.5rem' }}
+            style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(2.2rem, 8vw, 4rem)', 
+              color: 'var(--text)', 
+              marginBottom: '1.5rem' 
+            }}
           >
             Explore our <span style={{ color: 'var(--primary)' }}>work</span>
           </motion.h2>
@@ -30,7 +35,12 @@ const Gallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}
+            style={{ 
+              color: 'var(--text-muted)', 
+              fontSize: 'clamp(1rem, 3vw, 1.2rem)', 
+              maxWidth: '600px', 
+              margin: '0 auto' 
+            }}
           >
             A curated selection of our finest transformations, merging architectural precision with aesthetic excellence.
           </motion.p>
@@ -38,8 +48,8 @@ const Gallery = () => {
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', 
-          gap: '2.5rem' 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(250px, 100%, 350px), 1fr))', 
+          gap: '1.5rem' 
         }}>
           {galleryItems.map((item, index) => (
             <motion.div

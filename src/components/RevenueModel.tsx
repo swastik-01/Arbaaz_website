@@ -11,9 +11,14 @@ const RevenueModel = () => {
   return (
     <section id="revenue" className="section" style={{ background: 'var(--surface)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gap: 'clamp(3rem, 10vw, 6rem)', 
+          alignItems: 'center' 
+        }}>
           <div>
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', marginBottom: '2rem' }}>
               Sustainable & <span className="gradient-text">Profitable.</span>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '3rem' }}>

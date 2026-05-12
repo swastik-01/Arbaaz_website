@@ -4,17 +4,22 @@ const Mission = () => {
   return (
     <section id="mission" className="section" style={{ background: 'var(--background)', color: 'var(--text)' }}>
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'clamp(2rem, 5vw, 4rem)' }}>
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            style={{ flex: 1, minWidth: '300px' }}
+            style={{ flex: '1 1 400px' }}
           >
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '4rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            <h1 style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(2.2rem, 6vw, 4rem)', 
+              lineHeight: 1.1, 
+              marginBottom: '1.5rem' 
+            }}>
               IntraSpace: Revolutionizing the <span style={{ color: 'var(--primary)' }}>Interior Industry.</span>
             </h1>
-            <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
+            <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
               We are a new platform solving the problem of the unstructured interior industry by providing a phone and web-based app that facilitates custom designs and connects users to verified execution teams.
             </p>
           </motion.div>

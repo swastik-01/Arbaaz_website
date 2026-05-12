@@ -68,8 +68,8 @@ const Hero = ({ onOpenQuiz }: { onOpenQuiz: () => void }) => {
           transition={{ duration: 1 }}
         >
           <h2 style={{ 
-            fontSize: '1.5rem', 
-            letterSpacing: '5px', 
+            fontSize: 'clamp(0.8rem, 3vw, 1.5rem)', 
+            letterSpacing: 'clamp(2px, 1vw, 5px)', 
             textTransform: 'uppercase', 
             fontWeight: 400,
             marginBottom: '1rem',
@@ -79,7 +79,7 @@ const Hero = ({ onOpenQuiz }: { onOpenQuiz: () => void }) => {
           </h2>
           <h1 style={{ 
             fontFamily: 'var(--font-serif)', 
-            fontSize: '5.5rem', 
+            fontSize: 'clamp(2.5rem, 10vw, 5.5rem)', 
             lineHeight: 1.1, 
             marginBottom: '2.5rem',
             textShadow: '0 2px 20px rgba(0,0,0,0.3)'
@@ -91,12 +91,23 @@ const Hero = ({ onOpenQuiz }: { onOpenQuiz: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}
+            style={{ 
+              display: 'flex', 
+              gap: '1rem', 
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}
           >
-            <button onClick={onOpenQuiz} className="btn-primary" style={{ padding: '1.2rem 3rem' }}>
-              Start My Transformation
+            <button onClick={onOpenQuiz} className="btn-primary" style={{ padding: '1.2rem 2.5rem', width: 'auto', minWidth: '200px' }}>
+              Start Transformation
             </button>
-            <button className="btn-outline" style={{ color: 'var(--text)', borderColor: 'var(--text)', padding: '1.2rem 3rem' }}>
+            <button className="btn-outline" style={{ 
+              color: '#fff', 
+              borderColor: '#fff', 
+              padding: '1.2rem 2.5rem',
+              width: 'auto',
+              minWidth: '200px'
+            }}>
               Explore Gallery
             </button>
           </motion.div>

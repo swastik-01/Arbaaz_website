@@ -57,18 +57,34 @@ const ContactForm = () => {
   return (
     <section id="contact" className="section" style={{ background: 'var(--background)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '6rem', alignItems: 'start' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(300px, 100%, 500px), 1fr))', 
+          gap: 'clamp(2rem, 10vw, 6rem)', 
+          alignItems: 'start' 
+        }}>
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '3.5rem', marginBottom: '2rem', color: 'var(--text)' }}>
+            <h2 style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(2rem, 8vw, 3.5rem)', 
+              marginBottom: '2rem', 
+              color: 'var(--text)' 
+            }}>
               Let's Build Your <br />
               <span style={{ color: 'var(--primary)' }}>Masterpiece.</span>
             </h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '3rem', maxWidth: '500px' }}>
+            <p style={{ 
+              color: 'var(--text-muted)', 
+              fontSize: 'clamp(1rem, 3vw, 1.1rem)', 
+              lineHeight: 1.8, 
+              marginBottom: '3rem', 
+              maxWidth: '500px' 
+            }}>
               Whether it's a luxury residence or a commercial landmark, our engine is ready to transform your vision into reality.
             </p>
 
@@ -79,12 +95,12 @@ const ContactForm = () => {
                 { icon: <MapPin size={22} />, label: 'Office', value: 'Indiranagar, Bangalore, KA' },
               ].map(({ icon, label, value }) => (
                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'var(--surface)', border: '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
+                  <div style={{ width: 'clamp(40px, 10vw, 50px)', height: 'clamp(40px, 10vw, 50px)', borderRadius: '12px', background: 'var(--surface)', border: '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', flexShrink: 0 }}>
                     {icon}
                   </div>
                   <div>
                     <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 800, textTransform: 'uppercase' }}>{label}</div>
-                    <div style={{ color: 'var(--text)', fontWeight: 700 }}>{value}</div>
+                    <div style={{ color: 'var(--text)', fontWeight: 700, fontSize: 'clamp(0.85rem, 3vw, 1rem)' }}>{value}</div>
                   </div>
                 </div>
               ))}
@@ -96,7 +112,11 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="glass"
-            style={{ padding: '3rem', borderRadius: '24px', border: '1px solid var(--glass-border)' }}
+            style={{ 
+              padding: 'clamp(1.5rem, 5vw, 3rem)', 
+              borderRadius: '24px', 
+              border: '1px solid var(--glass-border)' 
+            }}
           >
             {submitted ? (
               <motion.div
@@ -121,7 +141,7 @@ const ContactForm = () => {
               </motion.div>
             ) : (
               <form id="contact-form" style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }} onSubmit={handleSubmit}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.4rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.4rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Full Name *</label>
                     <input
@@ -150,7 +170,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.4rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.4rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Phone</label>
                     <input

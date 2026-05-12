@@ -13,9 +13,9 @@ const Roadmap = () => {
   return (
     <section id="roadmap-timeline" className="section" style={{ background: '#0a0b10', color: '#fff' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '3.5rem' }}>The <span className="gradient-text">Feature Roadmap</span></h2>
-          <p style={{ color: '#8e929e', marginTop: '1.5rem', maxWidth: '600px', margin: '1.5rem auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(3rem, 10vw, 5rem)' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 8vw, 3.5rem)' }}>The <span className="gradient-text">Feature Roadmap</span></h2>
+          <p style={{ color: '#8e929e', marginTop: '1.5rem', maxWidth: '600px', margin: '1.5rem auto', fontSize: 'clamp(0.9rem, 3vw, 1.1rem)' }}>
             A structured journey from inspiration to execution, tracked every step of the way.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Roadmap = () => {
             zIndex: 0
           }} className="hidden-mobile" />
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem', position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'clamp(2rem, 5vw, 3rem)', position: 'relative', zIndex: 1 }}>
             {steps.map((step, i) => (
               <motion.div 
                 key={i}

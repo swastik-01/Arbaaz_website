@@ -91,8 +91,13 @@ function App() {
           <OnboardingQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
           <ProfileSetupModal isOpen={showSetup} onClose={() => setShowSetup(false)} />
 
-          <footer style={{ padding: '6rem 0', background: 'var(--surface)', color: 'var(--text)', borderTop: '1px solid var(--glass-border)' }}>
-            <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1.5fr', gap: '4rem', textAlign: 'left' }}>
+          <footer style={{ padding: 'clamp(3rem, 10vw, 6rem) 0', background: 'var(--surface)', color: 'var(--text)', borderTop: '1px solid var(--glass-border)' }}>
+            <div className="container" style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+              gap: '3rem', 
+              textAlign: 'left' 
+            }}>
               <div>
                 <img src={isDark ? "/logo_dark.png" : "/logo_light.png"} alt="IntraSpace Logo" style={{ height: '40px', marginBottom: '1.5rem' }} onError={e => { (e.target as HTMLImageElement).src = '/logo.png'; }} />
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8' }}>
