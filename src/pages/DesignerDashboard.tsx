@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Save, User, Briefcase, IndianRupee, Image as ImageIcon, CheckCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -25,8 +25,8 @@ const DesignerDashboard = () => {
         isDesigner: userProfile.isDesigner || false,
         specialty: userProfile.specialty || '',
         experience: userProfile.experience || '',
-        consultationFee: userProfile.consultationFee || '',
-        projectFee: userProfile.projectFee || '',
+        consultationFee: String(userProfile.consultationFee || ''),
+        projectFee: String(userProfile.projectFee || ''),
         bio: userProfile.bio || '',
         education: userProfile.education || '',
         certifications: userProfile.certifications || '',
@@ -34,7 +34,7 @@ const DesignerDashboard = () => {
     }
   }, [userProfile]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
     try {

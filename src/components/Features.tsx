@@ -1,8 +1,14 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, ShoppingCart, Users, Terminal, TrendingUp } from 'lucide-react';
+import { Cpu, ShoppingCart, Users, Terminal, TrendingUp, type LucideIcon } from 'lucide-react';
 
-const FeatureCard = ({ icon: Icon, title, description, index }) => (
+interface FeatureCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  index: number;
+}
+
+const FeatureCard = ({ icon: Icon, title, description, index }: FeatureCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 50, scale: 0.9 }}
     whileInView={{ opacity: 1, y: 0, scale: 1 }}

@@ -19,6 +19,14 @@ export interface UserProfile {
   companyName?: string;
   occupation?: string;
   profileCompleted?: boolean;
+  isDesigner?: boolean;
+  specialty?: string;
+  experience?: string;
+  consultationFee?: string | number;
+  projectFee?: string | number;
+  bio?: string;
+  education?: string;
+  certifications?: string;
 }
 
 interface AuthContextType {

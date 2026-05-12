@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, CheckCircle, Package, MessageSquare, Camera, ChevronRight, Layout, GraduationCap } from 'lucide-react';
+import { Clock, MapPin, Package, MessageSquare, Camera, Layout } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -57,14 +57,6 @@ const ProjectOS = () => {
     { item: 'High-Gloss Acrylic Cabinets', qty: '1 set', status: 'Manufacturing', date: 'Exp May 20' }
   ];
 
-  const enrolledCourses = [
-    { title: 'Modular Precision Mastery', progress: 65, instructor: 'Vikram Seth', status: 'In Progress' },
-    { title: 'Interior Lighting 101', progress: 100, instructor: 'Ananya Rao', status: 'Completed' }
-  ];
-
-  const certifications = [
-    { title: 'Certified Interior Planner', date: 'April 20, 2026', badge: '🏅' }
-  ];
 
 
   return (

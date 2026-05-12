@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type MouseEvent, type TouchEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DesignSwap = () => {
@@ -23,7 +23,7 @@ const DesignSwap = () => {
     }
   ];
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement> | { currentTarget: HTMLDivElement, clientX: number }) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     setSliderPos(Math.min(Math.max(x, 0), 100));
@@ -82,7 +82,10 @@ const DesignSwap = () => {
             boxShadow: 'var(--shadow)'
           }}
           onMouseMove={handleMouseMove}
-          onTouchMove={(e) => handleMouseMove(e.touches[0])}
+          onTouchMove={(e: TouchEvent<HTMLDivElement>) => handleMouseMove({ 
+            currentTarget: e.currentTarget, 
+            clientX: e.touches[0].clientX 
+          })}
         >
           <AnimatePresence mode="wait">
             <motion.div

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '../firebase';
 
 const ProfileSetupModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const { currentUser, updateProfile } = useAuth();

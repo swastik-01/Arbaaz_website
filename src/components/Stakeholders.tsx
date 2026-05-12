@@ -1,8 +1,13 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Palette, HardHat, Package } from 'lucide-react';
+import { Home, Palette, HardHat, Package, type LucideIcon } from 'lucide-react';
 
-const StakeholderCard = ({ icon: Icon, title, points }) => (
+interface StakeholderCardProps {
+  icon: LucideIcon;
+  title: string;
+  points: string[];
+}
+
+const StakeholderCard = ({ icon: Icon, title, points }: StakeholderCardProps) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}

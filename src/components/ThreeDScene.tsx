@@ -1,23 +1,19 @@
-import React, { Suspense, useRef, useEffect, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Suspense, useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { 
   OrbitControls, 
-  Environment, 
   Text, 
   Float, 
   ContactShadows, 
-  MeshReflectorMaterial,
-  BakeShadows,
-  Stage,
-  PerspectiveCamera,
-  GizmoHelper,
-  GizmoViewport,
   Grid
 } from '@react-three/drei';
-import { EffectComposer, Bloom, Vignette, ToneMapping } from '@react-three/postprocessing';
-import * as THREE from 'three';
 
-const Label = ({ name, height }) => {
+interface LabelProps {
+  name: string;
+  height: number;
+}
+
+const Label = ({ name, height }: LabelProps) => {
   return (
     <Float speed={2} rotationIntensity={0.1} floatIntensity={0.1}>
       <Text
@@ -35,7 +31,16 @@ const Label = ({ name, height }) => {
   );
 };
 
-const FurnitureObject = ({ name, position, width, length, height, color }) => {
+interface FurnitureObjectProps {
+  name: string;
+  position: [number, number, number];
+  width: number;
+  length: number;
+  height: number;
+  color: string;
+}
+
+const FurnitureObject = ({ name, position, width, length, height, color }: FurnitureObjectProps) => {
   const isMetal = ['chimney', 'fridge', 'oven', 'dishwasher'].includes(name.toLowerCase());
   const isFabric = name.toLowerCase().includes('chair');
 
@@ -55,8 +60,18 @@ const FurnitureObject = ({ name, position, width, length, height, color }) => {
   );
 };
 
+interface SceneData {
+  room: {
+    width: number;
+    length: number;
+    floorColor?: string;
+    wallColor?: string;
+  };
+  objects: FurnitureObjectProps[];
+}
+
 const LayoutRenderer = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<SceneData | null>(null);
   
   useEffect(() => {
     fetch('/scene_data.json')

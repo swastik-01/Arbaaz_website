@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Camera, CheckSquare, Clock, MapPin, ChevronRight, Upload, HardHat, FileText } from 'lucide-react';
+import { useState } from 'react';
+import { Camera, CheckSquare, Clock, MapPin, Upload, HardHat, FileText } from 'lucide-react';
 
 const ContractorOS = () => {
   const [activeProject, setActiveProject] = useState('GR-1024');

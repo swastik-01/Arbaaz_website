@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, TrendingUp, Briefcase, IndianRupee, ShieldCheck, ArrowUpRight, Settings } from 'lucide-react';
+import { TrendingUp, Briefcase, IndianRupee, ShieldCheck, ArrowUpRight, Settings } from 'lucide-react';
 import { collection, getDocs, addDoc, updateDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 
